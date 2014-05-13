@@ -1,0 +1,12 @@
+{
+  "name": "resume",
+  "version": "0.0.0",
+  "devDependencies": {
+    "load-grunt-tasks": "^0.4.0",
+    "gulp": "^3.6.2",
+    "gulp-sass": "^0.7.1",
+    "gulp-autoprefixer": "0.0.7",
+    "gulp-minify-css": "^0.3.4",
+    "gulp-uncss": "^0.4.3"
+  }
+}

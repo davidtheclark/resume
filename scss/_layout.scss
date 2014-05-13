@@ -1,0 +1,128 @@
+$double-border: 4px double $c-light;
+
+.wrapper {
+  padding: $pad;
+  @include scut-center-block(scut-em(800));
+  @media only print {
+    max-width: scut-em(860);
+  }
+}
+
+section + section {
+  margin-top: $pad;
+}
+
+address {
+  @include scut-border($double-border, y n);
+  @include scut-padding(0.5rem n);
+  margin-top: $pad;
+  @media #{$bp-until-med} {
+    font-size: $size-sm;
+  }
+  @media only screen {
+    margin-bottom: $pad;
+  }
+}
+
+.contact-detail {
+  float: left;
+  & + & {
+    &:before {
+      color: $c-light;
+      content: $scut-bull;
+      display: inline-block;
+      @include scut-margin(n $pad);
+    }
+  }
+  @media only screen and (max-width: scut-em(550)) {
+    display: block;
+    float: none;
+    text-align: center;
+    & + &:before {
+      display: none;
+    }
+  }
+}
+
+.row {
+  &:after {
+    content: "";
+    display: table;
+    clear: both;
+  }
+}
+
+.col {
+  width: 100%;
+}
+
+@media only print {
+  .col {
+    @include scut-padding($size-med n);
+    width: 50%;
+    float: left;
+  }
+
+  .col-left {
+    padding-right: $size-med;
+  }
+
+  .col-right {
+    padding-left: $size-med;
+  }
+}
+
+.skills-ender {
+  margin-top: $pad;
+}
+
+footer {
+  border-top: $double-border;
+  margin-top: $pad;
+}
+
+.projects-list {
+  b {
+    @extend %f-b;
+  }
+  dd {
+    margin-left: 0;
+    & + dt {
+      margin-top: $pad;
+    }
+  }
+}
+
+.urls {
+  @extend .sm;
+  @extend %scut-clearfix;
+  dt, dd {
+    float: left;
+  }
+  dt:after {
+    content: $scut-mdash;
+    float: right;
+    @include scut-margin(n $pad-xsm);
+  }
+  dd {
+    margin-left: 0;
+    > & + dt {
+      margin-left: $pad;
+    }
+  }
+  @media #{$bp-until-sm} {
+    dd, dt {
+      @include scut-margin(0 n $pad);
+    }
+    dd + dt {
+      clear: left;
+      margin-left: 0;
+    }
+  }
+}
+
+@media only screen and (min-width: scut-em(860)) {
+  html {
+    font-size: 18px;
+  }
+}
