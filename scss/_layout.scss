@@ -121,6 +121,18 @@ footer {
   }
 }
 
+
+.online-aside {
+  @extend .sm;
+  float: right;
+  text-align: right;
+  width: scut-rem(300);
+  display: none;
+  @media only print {
+    display: block;
+  }
+}
+
 @media only screen and (min-width: scut-em(860)) {
   html {
     font-size: 18px;
